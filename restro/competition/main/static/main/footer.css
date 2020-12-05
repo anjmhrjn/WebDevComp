@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+}
+
+footer {
+    width: 100%;
+    height: 15vh;
+    background-color: #000000;
+}
+
+.left-footer {
+    width: 25vw;
+    height: 100%;
+    margin-left: 3vw;
+    float: left;
+}
+
+.left-footer p {
+    margin: 7% 0;
+    color: #FAFAFA;
+    font-size: 2.5vh;
+}
+
+.mid-footer {
+    width: 40vw;
+    height: 100%;
+    float: left;
+}
+
+.mid-footer p {
+    color: #FAFAFA;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3vh;
+    margin: 5% 0 10px 0;
+}
+
+.mid-footer p a {
+    color: #FAFAFA;
+    line-height: 5vh;
+    margin-right: 10px;
+    
+}
+
+.right-footer {
+    width: 24vw;
+    height: 100%;
+    margin-right: 3vw;
+    float: right;
+}
+
+.right-footer p {
+    margin: 7% 0;
+    color: #FAFAFA;
+    font-size: 2.5vh;
+    text-align: right;
+}
+

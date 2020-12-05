@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>your bill</title>
+
+    <!-- linking css to html -->
+    <link rel="stylesheet" type="text/css" href="{% static 'customer/bill.css' %}">
+    <link rel="stylesheet" href="{% static 'main/home_navbar.css' %}" type="text/css">
+
+    <!-- few different styles -->
+    <style>
+    body {
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    </style>
+
+    <style>
+    table, td, th {
+      border: 2px solid black;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td {
+      text-align: center;
+    }
+    </style>
+</head>
+<body background="{% static 'images/4.jpg' %}">
+    <header>
+        <!-- navigation bar -->
+        <div class="navigation">
+            <img class="logo">
+            <nav>
+                <!-- checkbox and checkbtn introduced to make navbar slightly responsive -->
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">My Orders</a></li>
+                    <li><a href="#" class="active">Pay Bill</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- main content -->
+    <h1>YOUR BILL</h1>
+
+    <div class="main-content">
+      <table border="1" bordercolor="black" style="background-color:#EFEFEF" width="450" cellpadding="3" cellspacing="3">
+      <tr>
+          <td><h3>My Items</h3>
+          <td><h3>Quantity</h3>
+          <td><h3>Price(per item)</h3>
+          <td><h3>Total Price</h3>
+      </tr>
+
+      <tr>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+      </tr>
+      <tr>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+      </tr>
+      <tr>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+      </tr>
+      <tr>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+      </tr>
+      <tr>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+      </tr>
+      <tr>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+      </tr>
+      <tr>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+      </tr>
+      <tr>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+      </tr>
+      <tr>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+          <td><h3>#</h3>
+      </tr>
+
+      </table>
+    </div>
+
+    <div>
+        <a href="#" class="btn btn-nav">Remove Item</a>
+        <a href="#" class="btn btn-nav">Place Order</a>
+
+
+    </div>
+
+    <!-- script used to make icons operable -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+</html>

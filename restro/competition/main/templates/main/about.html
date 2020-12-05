@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <!-- linking different css files from static directory -->
+        <link rel="stylesheet" href="{% static 'main/home_navbar.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'main/about.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'main/footer.css' %}" type="text/css">
+    </head>
+    <body>
+        <header>
+            <!-- navigation bar -->
+            <div class="navigation">
+
+                <img class="logo">
+                <nav>
+                    <input type="checkbox" id="check">
+                    <label for="check" class="checkbtn">
+                        <i class="fas fa-bars"></i>
+                    </label>
+
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#" class="active">About Us</a></li>
+                        <li><a href="#">Sign In</a></li>
+                    </ul>
+                    <a href="#" class="social-media"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-media"><i class="fab fa-facebook-f"></i></a>
+
+                </nav>
+            </div>
+        </header>
+        <section>
+            <!-- main content -->
+            <div class="image">
+                <h1>Here goes an image</h1>
+            </div>
+            <div class="text">
+                <h1>Some quote here</h1>
+            </div>
+            <div class="chef">
+                <div class="chef-image">
+                    <h1>image of chef</h1>
+                </div>
+                <div class="chef-text">
+                    <h1>quote from chef</h1>
+                </div>
+            </div>
+            <div class="food">
+                <div class="food-text">
+                    <h1>text about food</h1>
+                </div>
+                <div class="food-image">
+                    <h1>image of food</h1>
+                </div>
+            </div>
+            <div class="happy-customer">
+                <div class="left-arrow">left</div>
+                <div class="customer-content">
+                    <div class="customer-image">
+                        <h1>image of customer</h1>
+                    </div>
+                    <div class="customer-text">
+                        <h1>text said by customer</h1>
+                    </div>
+                </div>
+                <div class="right-arrow">right</div>
+            </div>
+        </section>
+
+        <footer>
+            <!-- footer area -->
+            <div class="left-footer">
+                <p>
+                    Contacts: <br>
+                    1234567890/ 2345678901 <br>
+                    restro&#64;gmail.com
+                </p>
+            </div>
+            <div class="mid-footer">
+                <p>
+                    Restaurant Name Here<br>
+                    <a href="#" class="social-media"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-media"><i class="fab fa-instagram"></i></a>
+                </p>
+
+
+            </div>
+            <div class="right-footer">
+                <p>
+                    Opening Hours <br>
+                    07:00 A.M. to 09:00 P.M.
+                </p>
+            </div>
+        </footer>
+        <!-- script for icons -->
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </body>
+</html>

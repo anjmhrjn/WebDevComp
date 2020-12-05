@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPEhtml>
+<html>
+	<head>
+		<title>Log In </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- linking different css files from static directory -->
+		<link href="{% static 'main/login.css' %}" rel="stylesheet" type="text/css">
+		<link href="{% static 'main/home_navbar.css' %}" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="{% static 'main/footer.css' %}" type="text/css">
+	</head>
+	<body>
+		<header>
+			<!-- navigation bar -->
+			<div class="navigation">
+
+				<img class="logo">
+				<nav>
+					<input type="checkbox" id="check">
+					<label for="check" class="checkbtn">
+						<i class="fas fa-bars"></i>
+					</label>
+
+					<ul>
+						<li><a href="main/home.html">Home</a></li>
+						<li><a href="/about">About Us</a></li>
+						<li><a href="#" class="active">Sign In</a></li>
+					</ul>
+					<a href="#" class="social-media"><i class="fab fa-instagram"></i></a>
+					<a href="#" class="social-media"><i class="fab fa-facebook-f"></i></a>
+
+				</nav>
+			</div>
+		</header>
+
+		<section>
+			<!-- main content -->
+			<div class="image">
+				<img src="https://media-cdn.tripadvisor.com/media/photo-s/18/5e/17/62/restaurant.jpg" alt="Restaurant">
+			</div>
+			<div class="form">
+				<div class="inner">
+					<p>Sign In</p>
+					<form class="entry">
+						<label>Username</label><br>
+						<input type="text" name="username"><br>
+						<label>Password</label><br>
+						<input type="text" name="Password">
+						<input type="Submit">
+					</form>
+					<a href="#">Forget password?</a>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<!-- footer area -->
+			<div class="left-footer">
+				<p>
+					Contacts: <br>
+					1234567890/ 2345678901 <br>
+					restro&#64;gmail.com
+				</p>
+			</div>
+			<div class="mid-footer">
+				<p>
+					Restaurant Name Here<br>
+					<a href="#" class="social-media"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social-media"><i class="fab fa-instagram"></i></a>
+				</p>
+
+
+			</div>
+			<div class="right-footer">
+				<p>
+					Opening Hours <br>
+					07:00 A.M. to 09:00 P.M.
+				</p>
+			</div>
+		</footer>
+
+		<!-- script for icons -->
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	</body>
+</html>

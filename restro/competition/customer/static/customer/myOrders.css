@@ -1,0 +1,52 @@
+/* removing margin and padding for all elements */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    padding: 70px;
+
+}
+
+.main-content{
+    padding: 50px;
+    margin-top: 5px;
+
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: lighter;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 200px;
+    transition: background-color 0.2s border 0.2s color 0.2s;
+}
+
+.btn-full{
+    background-color: transparent;
+    color: #bf55ec;
+    margin-right: 15px;
+    border: 1px solid #bf55ec;
+
+}
+
+.btn-full:hover{
+    background-color: #fff;     /* change background color when mouse is hovered upon the button */
+}
+
+.btn-nav{
+    background-color: transparent;
+    color: #fff;
+    margin-right: 15px;
+    border: 1px solid #fff;
+
+}
+
+.btn-nav:hover{
+    background-color: #bf55ec;      /* change background color when mouse is hovered upon the button */
+}

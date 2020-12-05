@@ -1,0 +1,103 @@
+/* removing margin */
+* {
+    margin: 0;
+}
+
+section {
+    width: 100%;
+}
+
+.image {
+    width: 100%;
+    height: 71vh;
+    background-color: red;
+}
+
+
+.text {
+    width: 80%;
+    height: 20vh;
+    background-color: green;
+    margin: 0 auto;
+}
+
+.chef {
+    width: 80%;
+    height: 50vh;
+    margin: 0 auto;
+}
+
+.chef-image {
+    width: 50%;
+    background-color: purple;
+    height: 100%;
+    float: left;
+}
+
+.chef-text {
+    width: 50%;
+    background-color: cyan;
+    height: 100%;
+    float: right;
+}
+
+.food {
+    width: 80%;
+    height: 50vh;
+    margin: 0 auto;
+}
+
+.food-image {
+    width: 50%;
+    background-color: cyan;
+    height: 100%;
+    float: left;
+}
+
+.food-text {
+    width: 50%;
+    background-color: purple;
+    height: 100%;
+    float: right;
+}
+
+.happy-customer {
+    width: 80%;
+    background-color: grey;
+    height: 70vh;
+    margin: 0 auto;
+}
+
+.left-arrow {
+    background-color: pink;
+    float: left;
+    height: 100%;
+    margin-left: 25%;
+    width: 5%;
+}
+
+.customer-content {
+    background-color: brown;
+    float: left;
+    height: 100%;
+    width: 40%;
+}
+
+.customer-image {
+    height: 70%;
+    width: 100%;
+    background-color: yellowgreen;
+}
+
+.customer-text {
+    height: 30%;
+    width: 100%;
+}
+
+.right-arrow {
+    background-color: pink;
+    float: right;
+    height: 100%;
+    margin-right: 25%;
+    width: 5%;
+}

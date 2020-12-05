@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>menu</title>
+    <!-- linking css to html -->
+    <link rel="stylesheet" type="text/css" href="{% static 'customer/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'main/home_navbar.css' %}" type="text/css">
+
+    <!-- adding different fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Flamenco&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- few more styles -->
+    <style>
+      body{
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      }
+    </style>
+
+    <style>
+    table, td, th {
+      border: 2px solid black;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td {
+      text-align: center;
+    }
+    </style>
+  </head>
+
+  <body background="{% static 'images/4.jpg' %}">
+    <header>
+        <!-- navigation bar -->
+        <div class="navigation">
+            <img class="logo">
+            <nav>
+                <!-- checkbox and checkbtn introduced to make navbar slightly responsive -->
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul>
+                    <li><a href="#" class="active">Menu</a></li>
+                    <li><a href="#">My Orders</a></li>
+                    <li><a href="#">Pay Bill</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- main content -->
+    <div class="lines">
+    <h2>The mission is simple: serve delicious, affordable food that guest will want to return to week after week.</h2>
+    </div>
+    <p>All prices are quoted in local currency and subject to 10% Service Charge and thereafter 13% Value Added Tax.</p>
+
+    <h1>FOOD MENU</h1>
+
+    <h2>Breakfast:07:00 AM To 11:00 AM</h2>
+    <div class="breakfast">
+      <table border="1" bordercolor="#F9864D" style="background-color:#EFEFEF" width="450" cellpadding="3" cellspacing="3">
+      <tr>
+      <td><h3>HUNAN PRAWN</h3><br>(Deep fried prawns with hot spicy sauce)<br><h3>RS 975</h3>
+      <a href="#" class="btn btn-nav">Click to Order</a></td>
+      <td><h3>CHICKEN MALAI KEBABS</h3><br>(Tandoori baked chicken marinated with cream and indian spiced)<br><h3>RS 745</h3>
+      <a href="#" class="btn btn-nav">Click to Order</a></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3>
+      <a href="#" class="btn btn-nav">Click to order</a></td>
+      </tr>
+
+      <tr>
+      <td><h3>GONG BAO CHICKEN</h3><br>(Lightly fried chicken cooked with red chili capsicum onion, peanut and light soy sauce)<br><h3>RS 775</h3>
+      <a href="#" class="btn btn-nav">Click to order</a></td>
+      <td><h3>CHICKEN SPRING ROLLS</h3><br>(Home made rice paper rolled with vegetables and chicken served with hot & sweet sauce)<br><h3>RS 735</h3>
+      <a href="#" class="btn btn-nav">Click to order</a></td>
+      <td><h3>VEGETABLE SPRING ROLLS</h3><br>(Home made rice paper rolled with vegetables, hot and sweet sauce)<br><h3>RS 685</h3>
+      <a href="#" class="btn btn-nav">Click to order</a></td>
+      </tr>
+
+      <tr>
+      <td><h3>FISH FINGER</h3><br>(Bread crumb coated fried fish served with chips & tartar sauce)<br><h3>RS 745</h3>
+      <a href="#" class="btn btn-nav">Click to order</a></td>
+      <td><h3>CHICKEN MOMO</h3><br>(Nepali style chicken dumpling)<br><h3>RS 615</h3>
+      <a href="#" class="btn btn-nav">Click to order</a></td>
+      <td><h3>VEGETABLE PAKODA</h3><br>(Indian spiced battered fried vegetable served with mint sauce)<br><h3>RS 555</h3>
+      <a href="#" class="btn btn-nav">Click to order</a></td>
+      </tr>
+      </table>
+    </div>
+
+    <h2>Lunch:12:00 PM To 04:00 PM</h2>
+    <div class="lunch">
+      <table border="1" bordercolor="#F9864D" style="background-color:#EFEFEF" width="450" cellpadding="3" cellspacing="3">
+      <tr>
+      <td><h3>HUNAN PRAWN</h3><br>(Deep fried prawns with hot spicy sauce)<br><h3>RS 975</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>CHICKEN MALAI KEBABS</h3><br>(Tandoori baked chicken marinated with cream and indian spiced)<br><h3>RS 745</h3></td>
+      </tr>
+      <tr>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      </tr>
+      <tr>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      </tr>
+      </table>
+    </div>
+
+    <h2>Dinner:05:00 PM To 09:00 PM</h2>
+    <div class="dinner">
+      <table border="1" bordercolor="#F9864D" style="background-color:#EFEFEF" width="450" cellpadding="3" cellspacing="3">
+      <tr>
+      <td><h3>HUNAN PRAWN</h3><br>(Deep fried prawns with hot spicy sauce)<br><h3>RS 975</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>CHICKEN MALAI KEBABS</h3><br>(Tandoori baked chicken marinated with cream and indian spiced)<br><h3>RS 745</h3></td>
+      </tr>
+      <tr>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      </tr>
+      <tr>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      </tr>
+      </table>
+    </div>
+
+    <h2>Drinks:All Time.</h2>
+      <div class="drink">
+      <table border="1" bordercolor="#F9864D" style="background-color:#EFEFEF" width="450" cellpadding="3" cellspacing="3">
+      <tr>
+      <td><h3>HUNAN PRAWN</h3><br>(Deep fried prawns with hot spicy sauce)<br><h3>RS 975</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>CHICKEN MALAI KEBABS</h3><br>(Tandoori baked chicken marinated with cream and indian spiced)<br><h3>RS 745</h3></td>
+      </tr>
+      <tr>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      </tr>
+      <tr>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      <td><h3>VEGETABLE MOMO</h3><br>(Nepali style vegetable dumpling)<br><h3>RS 555</h3></td>
+      </tr>
+      </table>
+    </div>
+
+    <!-- script used to make icons operable -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  </body>
+</html>

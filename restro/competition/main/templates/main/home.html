@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Resturant name</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- linking different css files from static directory -->
+		<link href="{% static 'main/home_navbar.css' %}" rel="stylesheet" type="text/css">
+		<link href="{% static 'main/home.css' %}" rel="stylesheet" type="text/css">
+		<link href="{% static 'main/footer.css' %}" rel="stylesheet" type="text/css">
+
+	</head>
+	<body>
+		<header>
+			<!-- navigation bar -->
+			<div class="navigation">
+
+				<img class="logo">
+				<nav>
+					<input type="checkbox" id="check">
+					<label for="check" class="checkbtn">
+						<i class="fas fa-bars"></i>
+					</label>
+
+					<ul>
+						<li><a href="#" class="active">Home</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Sign In</a></li>
+					</ul>
+					<a href="#" class="social-media"><i class="fab fa-instagram"></i></a>
+					<a href="#" class="social-media"><i class="fab fa-facebook-f"></i></a>
+
+				</nav>
+			</div>
+		</header>
+		<section>
+			<!--main content-->
+			<img src="https://www.helpguide.org/wp-content/uploads/young-woman-eating-fast-food-chicken-sandwich-768.jpg" alt="food" class="bg-img">
+			<div class="home-text">Thamel, Kathmandu--9817034302</div>
+			<div><a href="#" id="home-eat" class="home-eat">Eat</a></div>
+			<div ><a href="#" id="home-drink" class="home-eat">Drink</a></div>
+		</section>
+		<footer>
+			<!-- footer area -->
+			<div class="left-footer">
+				<p>
+					Contacts: <br>
+					1234567890/ 2345678901 <br>
+					restro&#64;gmail.com
+				</p>
+			</div>
+			<div class="mid-footer">
+				<p>
+					Restaurant Name Here<br>
+					<a href="#" class="social-media"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social-media"><i class="fab fa-instagram"></i></a>
+				</p>
+			</div>
+			<div class="right-footer">
+				<p>
+					Opening Hours <br>
+					07:00 A.M. to 09:00 P.M.
+				</p>
+			</div>
+		</footer>
+
+		<!-- script for icons -->
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+	</body>
+</html>
