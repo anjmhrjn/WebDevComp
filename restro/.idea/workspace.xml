@@ -10,18 +10,18 @@
   </component>
   <component name="ProjectId" id="1l9g2NNbw4CgPU4d5IS6lG60Lnp" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/competition/customer/templates/customer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/competition/main/static/main/Images" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Lenovo\PycharmProjects\restro\competition\main\templates\main" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\PycharmProjects\restro\competition\main\static\main\Images" />
+      <recent name="C:\Users\Lenovo\PycharmProjects\restro\competition\supervisor\static\supervisor\Images" />
+      <recent name="C:\Users\Lenovo\PycharmProjects\restro\competition\supervisor\templates\supervisor" />
+      <recent name="C:\Users\Lenovo\PycharmProjects\restro\competition\main\templates\main" />
       <recent name="C:\Users\Lenovo\PycharmProjects\restro\competition\customer\templates\customer" />
-      <recent name="C:\Users\Lenovo\PycharmProjects\restro\competition\customer\static\images" />
-      <recent name="C:\Users\Lenovo\PycharmProjects\restro\competition\customer\static\customer" />
-      <recent name="C:\Users\Lenovo\PycharmProjects\restro\competition\main\static\main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Lenovo\PycharmProjects\restro\competition\main\templates\main" />
     </key>
   </component>
