@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 
 # this view is for home page
 def home(request):
-    return render(request=request, template_name='main/home.html', context=None)
+    return render(request=request, template_name='main/home.html', context={'title': 'Home'})
 
 
 # this view is for about page
@@ -29,14 +29,17 @@ def signIn(request):
                 login(request, user)
                 check_staff = User.objects.filter(is_staff=0)
                 if user in check_staff:
+                    messages.success(request, f'Logged in as {username}!')
                     return redirect('cust-food')
                 else:
+                    messages.success(request, f'Logged in as {username}!')
                     return redirect('suv-orders')
-            else:
-                messages.error(request, "Invalid username or password")
+        else:
+            messages.warning(request, "Invalid username or password")
+            return redirect('/login')
+    context = {"title": 'Sign In'}
 
-
-    return render(request, 'main/sign_up.html')
+    return render(request, 'main/sign_up.html', context)
 
 
 

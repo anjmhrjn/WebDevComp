@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from django.contrib import messages
 from customer.models import Order, Menu
@@ -38,6 +38,7 @@ def sold_items(request):
 
 def profile(request):
     return render(request, 'supervisor/profile.html')
+
 
 def logout_request(request):
     logout(request)

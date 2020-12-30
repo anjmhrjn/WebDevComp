@@ -1,21 +1,32 @@
-<link rel="stylesheet" href="home_navbar.css" type="text/css">
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<header>
-    <div class="navigation">
-        <img class="logo">
-        <nav>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul>
-                <li><a href="#" class="active">Menu</a></li>
-                <li><a href="#">My Orders</a></li>
-                <li><a href="#">Pay Bill</a></li>
-                <li><a href="#">Log Out</a></li>
-            </ul>  
-            <!-- <img src="Images/ig.png" class="social-media" id="ig">   
-            <img src="Images/fb.png" class="social-media" id="fb">            -->
-        </nav>
-    </div>       
+<header class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="container p-2">
+        <span class="navbar-brand mb-0 h1">Navbar</span>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <span class="nav-link">{{user}}</span>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/customer">Menu <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer/myOrders">My Orders</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer/bill">Pay bill</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer/logout">Logout</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
 </header>

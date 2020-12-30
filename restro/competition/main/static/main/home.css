@@ -24,7 +24,7 @@ section {
 	transform: translate(-50%, -50%);
 	font-size: 100%;
 	font: italic small-caps bold 15px Georgia, serif;
-	
+
 }
 .home-eat
 {
@@ -37,7 +37,7 @@ section {
 	font-size: 400%;
 	text-decoration:none;
 	font: italic small-caps bold 70px Georgia, serif;
-}	 
+}
 #home-eat
 {
   left: 40%;
@@ -46,22 +46,8 @@ section {
 {
   left: 58%;
 }
-div a:hover
+section div a:hover
 {
-	color: black;	
+	color: black;
 }
-div a::before
-{
-	content: '';
-    display: block;
-    height: 5px;
-    background-color: #444;
-    position: absolute;
-    bottom:0 ;
-    width: 0%;
-    transition: all ease-in-out 250ms;
-}
-div a:hover::before
-{
-	width: 100%;
-}
+

@@ -39,7 +39,21 @@ class Menu(models.Model):
         return self.item_name
 
 
-# # status prepared to create dropdown option in admin page
+# class OrderCount for creating a database model
+class OrderCount(models.Model):
+    order_number = models.IntegerField(validators=[MinValueValidator(1)])
+    total = models.FloatField(validators=[MinValueValidator(1)], default=1)
+    VAT = models.FloatField(validators=[MinValueValidator(1)], default=1)
+    SC = models.FloatField(validators=[MinValueValidator(1)], default=1)
+    amt_to_pay = models.FloatField(validators=[MinValueValidator(1)], default=1)
+    date_ordered = models.DateTimeField(default=timezone.now)
+    total_orders_placed = models.IntegerField(validators=[MinValueValidator(1)], default=1)
+
+    def __str__(self):
+        return str(self.order_number)
+
+
+# status prepared to create drop down option in admin page
 status = [
     ('delivered', 'DELIVERED'),
     ('cancelled', 'CANCELED'),
@@ -56,9 +70,10 @@ class Order(models.Model):
     date_ordered = models.DateTimeField(default=timezone.now)
     quantity = models.IntegerField(validators=[MinValueValidator(1)])
     order_status = models.CharField(max_length=12, choices=status, default='in process')
+    order_number = models.ForeignKey(OrderCount, on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
-        return self.order_status
+        return str(self.order_number)
 
 
 # # class Experience for creating a database model
