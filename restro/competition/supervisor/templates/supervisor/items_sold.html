@@ -1,0 +1,63 @@
+{% extends 'supervisor/base3.html' %}
+
+    {% block content %}
+
+        <div class="container bg-light col-xl-6 col-md-10 mt-3">
+            <div class="col-md-auto p-3 table-hover">
+                <h2 class="text-center mb-2">Items Sold</h2>
+                <h5 class="text-center mt-3 mb-5">From: {{start_date}} <br> To: {{end_date}}</h5>
+                <form class="text-center" method="GET">
+                    <label for="search" class="mr-3">Search Item</label>
+                    <input id="search" type="text" name="item_name">
+                    <button type="submit" class="btn btn-success col-sm-3 ml-3">Search</button>
+                </form>
+                
+            </div>      
+
+        </div>      
+
+        <div class="container bg-light col-xl-6 col-md-10 ">
+            <div class="col-md-auto p-5 table-hover ">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Items Sold</th>
+
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table">
+                        {% for order, values in orders.items %}
+
+                            {% if values.stock <= 0 %}
+                                <tr class="bg-danger text-white">
+                            {% else %}
+                                <tr>
+                            {% endif %}
+
+                                    <th></th>
+                                    <td>{{values.name}}</td>
+
+                                    <td>{{values.stock}}</td>
+                                    <td>{{values.quantity}}</td>
+
+                                    <td>{{values.status}}</td>
+                                </tr>
+
+
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+                
+            </div>      
+
+        </div>      
+
+    {% endblock content %}
+
+

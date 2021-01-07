@@ -1,0 +1,60 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+    {% block content %}
+
+        <div class="container-fluid d-none d-md-block m-0 p-0">
+            <img src="{% static 'main/Images/home_dessert.jpg' %}" alt="image related to restaurant" style="width:100%;">
+        </div>
+
+        <div class="container-fluid text-center text-uppercase h4 mt-2">
+            <div class="container-fluid my-3">
+                <em>
+                    <p class="lead text-center text-dark" style="font-family:sans-serif;">The mission is simple:serve delicious, affordable food that<br>  guests will want to return to week after week.<br></p>
+                </em>
+            </div>
+            <span><a href="/eat" class="text-decoration-none col-lg-4" style="color: #000;">Food</a></span>
+            <span><a href="/dessert" class="text-decoration-none col-lg-4" style="color: #000;">Dessert</a></span>
+        </div>
+
+         <div class="container my-4 p-0">
+
+             <div class="accordion" id="accordionExample">
+
+                {% for category in dessert %}
+
+                    <div class="card">
+                        <div class="card-header" id="heading{{forloop.counter}}">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-{{forloop.counter}}" aria-expanded="false" aria-controls="collapse-{{forloop.counter}}">
+                                    {{category.name}}
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapse-{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="row">
+                                    {% for items in category.item %}
+
+                                        <div class="col-sm col-lg-4 col-md-6">
+
+                                            <div class="card mb-4 border-0" style="width: 18rem;">
+                                                <div class="card-body text-center h-100">
+                                                    <h3 class="card-title">{{items.item_name}}</h3>
+                                                    <p class="card-text mb-2 lead">{{items.description}}</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+        {% include 'main/footer.html' %}
+
+    {% endblock content %}

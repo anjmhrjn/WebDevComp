@@ -1,0 +1,126 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+	<style>
+
+		.place
+		{
+			width: 30%;
+			top: 50%;
+			left: 35%;
+			position: absolute;
+		}
+
+		.left
+		{
+			width: 45%;
+			float: left;
+			/* text-align: center; */
+			margin: 0 0 0 5px;
+
+
+		}
+
+		.right
+		{
+			width: 45%;
+			float: right;
+			/* text-align: center; */
+			margin: 0 5px 0 0;
+
+		}
+
+		#image-bg
+		{
+			width: 100%;
+			height: 100vh;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.home-text
+		{
+			position: absolute;
+			top: 45%;
+			left: 42%;
+			color: rgb(255, 255, 255);
+			/* transform: translate(-50%, -50%); */
+			font-size: 100%;
+			font: italic small-caps bold 15px Georgia, serif;
+
+		}
+
+		.home-eat
+		{
+			cursor: pointer;
+			color: rgb(255, 255, 255);
+			text-decoration:none;
+			font: italic small-caps bold 5vw Georgia, serif;
+		}
+
+		#home-eat
+		{
+
+		  left: 40%;
+		}
+		#home-drink
+		{
+
+			left: 58%;
+		}
+
+		.place div a:hover
+		{
+			color: black;
+		}
+		@media only screen and (max-width: 640px){
+
+			.place
+			{
+				width: 0%;
+				top: 55%;
+				left: 40%;
+				transform: translate(-50%, -50%);
+				position: absolute;
+			}
+
+			.home-eat
+			{
+				font: italic small-caps bold 7vw Georgia, serif;
+			}
+
+
+			#home-eat
+			{
+			  display: inline-block;
+			  margin: 20px 0;
+			}
+
+			.home-text
+			{
+				top: 40%;
+				left: 30%;
+			}
+
+
+		}
+	</style>
+
+	<div class="bg-img">
+		<img id="image-bg" src="{% static 'main/Images/bg_restaurant.jpg' %}" alt="image related to restaurant">
+		<div class="home-text">Thamel, Kathmandu--9817034302</div>
+		<div class="place">
+			<div class="left"><a href="/eat" id="home-eat" class="home-eat">Eat</a></div>
+			<div class="right"><a href="/drink" id="home-drink" class="home-eat">Drink</a></div>
+		</div>
+	</div>
+
+	{% include 'main/footer.html' %}
+	<script src="{% static 'main/JS/home_page.js' %}"></script>
+
+{% endblock content %}
+
+
+
+

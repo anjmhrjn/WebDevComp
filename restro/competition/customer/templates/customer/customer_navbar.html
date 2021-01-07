@@ -1,6 +1,10 @@
+{% load static %}
 <header class="navbar navbar-expand-lg navbar-dark bg-dark">
     <nav class="container p-2">
-        <span class="navbar-brand mb-0 h1">Navbar</span>
+        <span class="navbar-brand mb-0 h1">
+            <img class="logo" src="{% static 'main/Images/logo.png' %}" alt="Logo consists of pizza" >
+            <h4 class="head1">Nextstep Restro</h4>
+        </span>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -11,16 +15,51 @@
                 <li class="nav-item">
                     <span class="nav-link">{{user}}</span>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/customer">Menu <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/customer/myOrders">My Orders</a>
-                </li>
+                {% if 'Menu' in title %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/customer">Menu<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/customer/myOrders">My Orders</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/customer/bill">Pay bill</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/customer/bill">Pay bill</a>
+                    </li>
+                {% elif title == 'My Orders' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/customer">Menu</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/customer/myOrders">My Orders<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/customer/bill">Pay bill</a>
+                    </li>
+                {% elif title == 'Your bill' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/customer">Menu</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/customer/myOrders">My Orders</a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/customer/bill">Pay bill<span class="sr-only">(current)</span></a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/customer">Menu</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/customer/myOrders">My Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/customer/bill">Pay bill</a>
+                    </li>
+
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="/customer/logout">Logout</a>
                 </li>

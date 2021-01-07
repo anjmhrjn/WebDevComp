@@ -2,7 +2,11 @@
 
 
     {% block content %}
-        <div class="container bg-light col-lg-6 mt-5 col-md-10 rounded-lg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+
+        </style>
+        <div class="container bg-light col-lg-6 mt-2 col-md-10 rounded-lg">
             <div class="col-md-auto p-3 table-hover">
                 <table class="table ">
                     <thead>
@@ -11,15 +15,15 @@
                             <th scope="col">My Orders</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Price(per item)</th>
+                            <th></th>
                         </tr>
                     </thead>
 
                     <tfoot>
                         <tr>
-                            <th>
+                            <th colspan="5" class="text-right">
                                 <form method="POST">
                                     {% csrf_token %}
-
                                     <button class="btn btn-success" type="submit">Confirm Order</button>
                                 </form>
                             </th>
@@ -32,13 +36,26 @@
                         {% if my_orders %}
                             {% for orders in my_orders %}
                                 {% for name, price_quantity in orders.items %}
+
                                     <tr>
                                         <th>{{forloop.counter}}</th>
                                         <td>{{name}}</td>
-                                        {% for key in price_quantity %}
-                                            <td>{{key.quantity}}</td>
-                                            <td>{{key.price}}</td>
-                                        {% endfor %}
+
+                                        <td>{{price_quantity.quantity}}</td>
+                                        <td>{{price_quantity.price}} {{key.saved}}</td>
+
+                                        <td>
+                                            {% if not price_quantity.saved %}
+                                            <form action="remove">
+                                                <input hidden type="text" name="item_name" value="{{name}}">
+
+                                                <button type="submit" class="btncross"><i class="fa fa-close"></i></button>
+                                            </form>
+
+                                            {% else %}
+                                            Done!
+                                            {% endif %}
+                                        </td>
                                     </tr>
                                 {% endfor %}
                             {% endfor %}

@@ -1,0 +1,64 @@
+{% extends "supervisor/base3.html" %}
+
+    {% block content %}
+
+
+        <div class="container bg-light col-xl-6 col-md-10 mt-3">
+            <div class="col-md-auto p-3 table-hover">
+                <h4 class="text-center mb-2">View Reservation</h4>
+                <form class="text-center" method="GET">
+                    <label for="search" class="my-3 col-md-5 col-lg-2">First Name:</label>
+                    <input id="search" class="col-md-5 col-lg-3" type="text" name="fname">
+                    <label for="date" class="col-md-5 col-lg-2">Date:</label>
+                    <input type="datetime-local" class="col-md-5 col-lg-3" name="date" id="date" value="{{date}}">
+                    <button type="submit" class="btn btn-success col-sm-3 ml-3">Search</button>
+                </form>
+            </div>      
+
+        </div>      
+
+        <div class="container bg-light col-xl-6 col-md-10 text-center">
+            <div class="col-md-auto p-2 table-hover ">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Reserved Table</th>
+                            <th scope="col">Seats Booked</th>
+                            <th scope="col">User Contact</th>
+                            <th scope="col">Reserved For</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table">
+                        {% for reservation in reservations %}
+                            <tr>
+                                <th scope="col"></th>
+                                <td scope="col">{{reservation.first_name}}</td>
+                                <td scope="col">{{reservation.last_name}}</td>
+                                <td scope="col">{{reservation.table_name}}</td>
+                                <td scope="col">{{reservation.no_of_seats}}</td>
+                                <td scope="col">{{reservation.user_contact}}</td>
+                                <td scope="col">{{reservation.registration_date}}</td>
+                            </tr>
+                        {% empty %}
+                            <small class="text-danger">
+                                <em>Sorry no records found</em>
+                            </small>
+
+
+
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+                
+            </div>      
+
+        </div>      
+
+    {% endblock content %}
+
+

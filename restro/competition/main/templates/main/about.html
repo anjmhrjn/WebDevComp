@@ -1,103 +1,85 @@
+{% extends 'main/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
 
-        <!-- linking different css files from static directory -->
-        <link rel="stylesheet" href="{% static 'main/home_navbar.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'main/about.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'main/footer.css' %}" type="text/css">
-    </head>
-    <body>
-        <header>
-            <!-- navigation bar -->
-            <div class="navigation">
-
-                <img class="logo">
-                <nav class="container">
-                    <input type="checkbox" id="check">
-                    <label for="check" class="checkbtn">
-                        <i class="fas fa-bars"></i>
-                    </label>
-
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#" class="active">About Us</a></li>
-                        <li><a href="#">Sign In</a></li>
-                    </ul>
-                    <a href="#" class="social-media"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-media"><i class="fab fa-facebook-f"></i></a>
-
-                </nav>
-            </div>
-        </header>
-        <section>
-            <!-- main content -->
-            <div class="image">
-                <h1>Here goes an image</h1>
-            </div>
-            <div class="text">
-                <h1>Some quote here</h1>
-            </div>
-            <div class="chef">
-                <div class="chef-image">
-                    <h1>image of chef</h1>
+	{% block content %}
+        <div>
+            <img src="{% static 'main/Images/aboutchef.jpg' %}" class="d-none d-md-block img-fluid" alt="chef" style="width: 100%">
+        </div>
+		
+        <div class="container-fluid my-4">
+            <em>
+                <p class="lead text-center" style="font-family:verdana; color:brown;">The mission is simple:serve delicious, affordable food that<br>  guests will want to return to week after week.<br></p>
+            </em>
+        </div>
+		
+        <div class="container">
+            <div class="row text-uppercase text-center">
+                <div class="col-sm-6 p-md-0">
+                    <img src="{% static 'main/Images/head_chef.jpg' %}" class="img-thumbnail" alt="chef" style="border-radius: 50px; border: none;">
                 </div>
-                <div class="chef-text">
-                    <h1>quote from chef</h1>
+				
+                <div class="col-sm-6">
+                    <h3>Quote from our Head Chef</h3>
+                        <p class="mt-4 font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                        </p>
                 </div>
-            </div>
-            <div class="food">
-                <div class="food-text">
-                    <h1>text about food</h1>
-                </div>
-                <div class="food-image">
-                    <h1>image of food</h1>
-                </div>
-            </div>
-            <div class="happy-customer">
-                <div class="left-arrow">left</div>
-                <div class="customer-content">
-                    <div class="customer-image">
-                        <h1>image of customer</h1>
+				
+                <div class="w-100 m-5"></div>
+                    <div class="col-sm-6">
+                        <h3>Bigger Burger: Better than ever</h3>
+                        <p class="mt-4 font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                        </p>
                     </div>
-                    <div class="customer-text">
-                        <h1>text said by customer</h1>
-                    </div>
+					
+                <div class="col-sm-6 p-md-0">
+                    <img src="{% static 'main/Images/food.jpg' %}" class="img-thumbnail" alt="chef" style="border-radius: 50px; border: none;">
                 </div>
-                <div class="right-arrow">right</div>
-            </div>
-        </section>
+                <div class="mx-auto my-4 col-sm-12 col-md-6">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for data in photo %}
 
-        <footer>
-            <!-- footer area -->
-            <div class="left-footer">
-                <p>
-                    Contacts: <br>
-                    1234567890/ 2345678901 <br>
-                    restro&#64;gmail.com
-                </p>
-            </div>
-            <div class="mid-footer">
-                <p>
-                    Restaurant Name Here<br>
-                    <a href="#" class="social-media"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-media"><i class="fab fa-instagram"></i></a>
-                </p>
+                                {% if forloop.counter == 1 %}
+                                    <div class="carousel-item active">
+                                {% else %}
+                                    <div class="carousel-item">
+                                {% endif %}
 
+                                        <img class="d-none d-md-block w-100" src="{{data.photo.url}}" alt="{{data.photo}}" style="border-radius:5% 5% 0 0 ;">
+                                        <div class="d-md-block bg-dark text-white">
+                                            <h5>{{data.experience_title}}</h5>
+                                            <p class="m-0">{{data.experience_description}}</p>
+                                            <p class="m-0"><cite title="Source Title">-{{data.shared_by}}</cite></p>
+                                        </div>
+                                    </div>
 
+                            {% endfor %}
+
+				        </div>
+				        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+					        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					        <span class="sr-only">Previous</span>
+				        </a>
+				        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+					        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					        <span class="sr-only">Next</span>
+				        </a>
+                    </div>
+			    </div>
+				
             </div>
-            <div class="right-footer">
-                <p>
-                    Opening Hours <br>
-                    07:00 A.M. to 09:00 P.M.
-                </p>
-            </div>
-        </footer>
-        <!-- script for icons -->
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    </body>
-</html>
+        </div>
+
+        {% include 'main/footer.html' %}
+	{% endblock content %}
+
+    
+

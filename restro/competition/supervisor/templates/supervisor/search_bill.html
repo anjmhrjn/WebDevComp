@@ -1,0 +1,103 @@
+{% extends "supervisor/base3.html" %}
+
+
+	{% block content %}
+		<div class="container bg-light mt-3 col-lg-6 col-md-8">
+			<h2 class="text-center p-2">Sales</h2>
+			<div class="row">
+				<form class="form-inline">
+
+					<div class="form-group mb-2 col-md-5 col-lg-3">
+						<label>Orders From:</label>
+					</div>
+					<div class="form-group mb-2 col-md-5 col-lg-3">
+						<select class="custom-select w-100" name="table_value">
+							<option>Table1</option>
+							<option>Table2</option>
+						</select>
+					</div>
+					<div class="form-group mb-2 col-md-5 col-lg-3">
+						<label>Ordered Date:</label>
+					</div>
+
+					<div class="form-group mb-2 col-md-5 col-lg-3">
+						<input class="form-control" type="date" id="example-date-input" name="date" value={{date_today}}>
+					</div>
+					<div class="form-group mb-2  col-md-5 col-lg-3">
+						<button type="submit" class="btn btn-success mb-2 w-100">Search</button>
+					</div>
+
+				</form>
+
+			</div>
+
+
+			<div class="accordion mt-3" id="accordionExample">
+				{% for order_number, orders_placed in orders.items %}
+					<div class="card">
+						<div class="card-header" id="heading{{forloop.counter}}">
+							<h2 class="mb-0">
+								<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-{{forloop.counter}}" aria-expanded="true" aria-controls="collapse-{{forloop.counter}}">
+									 Order Number: {{order_number}} <br> Time: {{order_number.date_ordered}}
+								</button>
+							</h2>
+						</div>
+
+						<div id="collapse-{{forloop.counter}}" class="collapse show" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
+							<div class="card-body">
+								<div class="col-md-auto p-3 table-hover ">
+									<table class="table ">
+										<thead>
+											<tr>
+												<th scope="col"></th>
+												<th scope="col">My Items</th>
+												<th scope="col">Quantity</th>
+												<th scope="col">price(per item)</th>
+												<th scope="col">total</th>
+											</tr>
+										</thead>
+
+
+										<tfoot>
+												<tr>
+													<th colspan="4" style="text-align: right;">VAT(13%)</th>
+													<td>Rs.{{order_number.VAT}}</td>
+												</tr>
+												<tr>
+													<th colspan="4" style="text-align: right;">Service charge (10%)</th>
+													<td>Rs.{{order_number.SC}}</td>
+												</tr>
+												<tr>
+													<th colspan="4" style="text-align: right;">Amount to pay</th>
+													<td>Rs.{{order_number.amt_to_pay}}</td>
+												</tr>
+										</tfoot>
+										<tbody>
+
+											{% for order in orders_placed %}
+											{% for order_obj, details in order.items %}
+												<tr>
+													<th></th>
+													<td>{{order_obj.item}}</td>
+													<td>{{order_obj.quantity}}</td>
+													<td>{{details.price}}</td>
+													<td>{{details.total}}</td>
+												</tr>
+											{% endfor %}
+											{% endfor %}
+
+										</tbody>
+									</table>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+
+
+		</div>
+
+	{% endblock content %}
+

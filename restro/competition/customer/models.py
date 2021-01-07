@@ -70,6 +70,7 @@ class Order(models.Model):
     date_ordered = models.DateTimeField(default=timezone.now)
     quantity = models.IntegerField(validators=[MinValueValidator(1)])
     order_status = models.CharField(max_length=12, choices=status, default='in process')
+    updated_quantity = models.CharField(max_length=100, blank=True, null=True)
     order_number = models.ForeignKey(OrderCount, on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
